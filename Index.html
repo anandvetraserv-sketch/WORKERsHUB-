@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workers Hub</title>
+
+<style>
+body{font-family:Arial;margin:0;background:#f4f6f8}
+header{background:#0d6efd;color:#fff;padding:20px;text-align:center}
+section{background:#fff;margin:12px;padding:15px;border-radius:8px}
+h2{color:#0d6efd}
+.worker{border-bottom:1px solid #ddd;padding:10px 0}
+.worker:last-child{border:none}
+button{background:#0d6efd;color:#fff;border:none;padding:8px 12px;border-radius:5px;cursor:pointer;margin-top:5px}
+
+/* Popup */
+#popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6)}
+#popupContent{background:#fff;margin:20% auto;padding:20px;width:90%;max-width:400px;border-radius:8px}
+input,textarea{width:100%;padding:8px;margin:6px 0}
+.close{background:#999}
+footer{background:#222;color:#fff;text-align:center;padding:20px}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Workers Hub</h1>
+<p>Book Trusted Daily Wage Workers</p>
+</header>
+
+<section>
+<h2>🔧 Electricians</h2>
+
+<div class="worker">
+Ramesh Kumar – ₹500  
+<br>
+<button onclick="openForm('Ramesh Kumar - Electrician')">Book Now</button>
+</div>
+
+<div class="worker">
+Amit Verma – ₹550  
+<br>
+<button onclick="openForm('Amit Verma - Electrician')">Book Now</button>
+</div>
+
+<div class="worker">
+Suresh Yadav – ₹600  
+<br>
+<button onclick="openForm('Suresh Yadav - Electrician')">Book Now</button>
+</div>
+
+<div class="worker">
+Rahul Singh – ₹650  
+<br>
+<button onclick="openForm('Rahul Singh - Electrician')">Book Now</button>
+</div>
+</section>
+
+<section>
+<h2>🔩 Mechanics</h2>
+
+<div class="worker">
+Suraj – ₹700  
+<br>
+<button onclick="openForm('Suraj - Mechanic')">Book Now</button>
+</div>
+
+<div class="worker">
+Rohit – ₹750  
+<br>
+<button onclick="openForm('Rohit - Mechanic')">Book Now</button>
+</div>
+</section>
+
+<!-- POPUP FORM -->
+<div id="popup">
+<div id="popupContent">
+
+<button class="close" onclick="closeForm()">Close</button>
+<h3>Book Worker</h3>
+
+<form 
+action="https://docs.google.com/forms/d/e/1FAIpQLSdBClwqiiBz_rQukNfF1CZN5yiWV9bgg6qZuPMJ-S3CuN3S3w/formResponse"
+method="POST"
+target="_blank">
+
+<!-- Worker Name -->
+<input type="hidden" 
+name="entry.267176439" 
+id="workerName">
+
+<!-- Phone -->
+<input type="tel" 
+name="entry.2054762142" 
+placeholder="Phone Number" required>
+
+<!-- Address -->
+<textarea 
+name="entry.1798983070" 
+placeholder="Address" required></textarea>
+
+<!-- Date -->
+<input type="date" 
+name="entry.1461100563" required>
+
+<!-- Time -->
+<input type="time" 
+name="entry.331120329" required>
+
+<!-- Extra Message -->
+<textarea 
+name="entry.2124881549" 
+placeholder="Any extra requirement"></textarea>
+
+<button type="submit">Confirm Booking</button>
+</form>
+
+</div>
+</div>
+
+<footer>
+<h3>Contact Us</h3>
+<p>📞 +91 9899423123</p>
+<p>📧 info@workershub.com</p>
+<p>📍 New Delhi, India</p>
+</footer>
+
+<script>
+function openForm(worker){
+document.getElementById("popup").style.display="block";
+document.getElementById("workerName").value=worker;
+}
+function closeForm(){
+document.getElementById("popup").style.display="none";
+}
+</script>
+
+</body>
+</html>
